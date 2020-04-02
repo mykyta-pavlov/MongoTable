@@ -7,7 +7,12 @@
         mc:Ignorable="d"
         Title="MongoDB Table" Background="White" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="DataGridXAML" Margin="10,10,400,10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid Grid.Column="0" x:Name="DataGridXAML">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ім'я" Binding="{Binding StudentName}" Width="*"/>
                 <DataGridTextColumn Header="Прізвище" Binding="{Binding StudentSurname}" Width="*"/>
@@ -15,15 +20,18 @@
                 <DataGridTextColumn Header="Курс" Binding="{Binding StudentYearOfStudy}" Width="*"/>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBlock HorizontalAlignment="Left" Margin="440,38,0,0" Text="Додати нового користувача:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="25" Width="327" FontFamily="Californian FB"/>
-        <TextBlock HorizontalAlignment="Left" Margin="440,108,0,0" Text="Ім'я:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="440,148,0,0" Text="Прізвище:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="440,188,0,0" Text="Група:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock HorizontalAlignment="Left" Margin="440,228,0,0" Text="Курс:" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="TextBoxName" HorizontalAlignment="Left" Margin="540,106,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBoxSurname" HorizontalAlignment="Left" Margin="540,146,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBoxGroup" HorizontalAlignment="Left" Margin="540,186,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="TextBoxYearOfStudy" HorizontalAlignment="Left" Margin="540,226,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="ButtonAdd" Content="Додати" HorizontalAlignment="Left" Margin="540,278,0,0" VerticalAlignment="Top" Click="ButtonAdd_Click"/>
+
+        <StackPanel Grid.Column="1">
+            <TextBlock HorizontalAlignment="Left" Margin="30,20,0,0" Text="Додати нового студента:" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="Black" FontSize="25" Width="327" FontFamily="Californian FB"/>
+            <TextBlock HorizontalAlignment="Left" Margin="30,30,0,0" Text="Ім'я:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox x:Name="TextBoxName" Margin="30,0,0,0" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" Width="200"/>
+            <TextBlock HorizontalAlignment="Left" Margin="30,30,0,0" Text="Прізвище:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox x:Name="TextBoxSurname" Margin="30,0,0,0" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+            <TextBlock HorizontalAlignment="Left" Margin="30,30,0,0" Text="Група:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox x:Name="TextBoxGroup" Margin="30,0,0,0" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+            <TextBlock HorizontalAlignment="Left" Margin="30,30,0,0" Text="Курс:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"/>
+            <TextBox x:Name="TextBoxYearOfStudy" Margin="30,0,0,0" HorizontalAlignment="Left" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+            <Button x:Name="ButtonAdd" Margin="30,30,0,0" Content="Додати" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ButtonAdd_Click" FontSize="15"/>
+        </StackPanel>
     </Grid>
 </Window>

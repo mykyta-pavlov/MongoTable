@@ -5,6 +5,7 @@ namespace MongoTable
 {
     internal class Student
     {
+        //Атрибути для зв'язування документів з класом. ID створюється автоматично
         [BsonId]
         public ObjectId Id { get; set; }
         [BsonElement("name")]
@@ -16,6 +17,7 @@ namespace MongoTable
         [BsonElement("yearOfStudy")]
         public int StudentYearOfStudy { get; set; }
 
+        //Конструктор буде викликатися під час додавання нового об'єкту через ButtonAdd_Click
         public Student(string studentName, string studentSurname, string studentGroup, int studentYearOfStudy)
         {
             StudentName = studentName;
