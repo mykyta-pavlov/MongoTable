@@ -8,12 +8,12 @@ namespace MongoTable
     public partial class MainWindow : Window
     {
         //Рядок підключення до MongoDB
-        //Для підключення до локальної бази даних можна лишити дужки порожніми
-        static readonly MongoClient client = new MongoClient("mongodb+srv://testUser:vouxjG57ERpNdAAs@projectdotnet-t1mwf.mongodb.net/test?retryWrites=true&w=majority");
+        //Підключення до локальної бази даних
+        static readonly MongoClient client = new MongoClient();
         //Назва БД для підключення 
-        static readonly IMongoDatabase database = client.GetDatabase("univesrity_database");
+        static readonly IMongoDatabase database = client.GetDatabase(<dbName>);
         //Назва колекції для підключення 
-        static readonly IMongoCollection<Student> collection = database.GetCollection<Student>("students");
+        static readonly IMongoCollection<Student> collection = database.GetCollection<Student>(<collectionName>);
         
         public MainWindow()
         {
